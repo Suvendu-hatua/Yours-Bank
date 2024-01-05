@@ -1,0 +1,119 @@
+.card-text p{
+    margin-bottom: auto;
+}
+.btn-warning{
+    margin-left: 20px;
+}
+.heading{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    background-color: aquamarine;
+    padding: 7px;
+}
+.card-all{
+    margin: auto;
+    width: 550px;
+    
+}
+.img-fluid{
+    height: 170px;
+}
+
+.money-transaction{
+    position:absolute;
+    top: 0;
+    left: 0;
+    background-color:rgb(220, 242, 246);
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.content{
+    background-color: white;
+    width: 450px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 5px;
+}
+.content h4,.transferMoney-content h4{
+    text-align: center;
+    background-color: aquamarine;
+    padding: 5px;
+    border-radius: 5px;
+}
+.transferMoney-content{
+    background-color: white;
+    width: 480px;
+    height: 390px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.card-text{
+    margin-bottom: auto;
+}
+.card-img-top{
+    width: 250px;
+    margin: auto;
+}
+.sp-heading{
+    text-align: center;
+    background-color: aquamarine;
+    padding: 5px;
+    border-radius: 5px;
+}
+.sp-para{
+    /* border: 1px solid black; */
+    width: 320px;
+    margin: auto;
+}
+.card-sp{
+    width: 500px;
+    margin: auto;
+}
+.mid-section{
+    margin: 20px;
+    /* display: none; */
+}
+.myalerts{
+    color: red;
+}
+
+.password-content{
+    height: 350px;
+}
+
+@media only screen and (max-width: 576px){
+    .card-all{
+        width: 90%;
+    }
+    .card-sp{
+        width: 100%;
+        font-size: small;
+    }
+    .img-fluid{
+        height: 150px;
+        display: block;
+        margin: auto;
+    }
+    .card-img-top{
+        width: 200px;
+        margin: auto;
+    }
+    .card-sp .btn{
+        font-size: 0.5rem;
+    }
+    .card-all .card-body{
+        margin-left: 9%;
+    }
+
+    .transferMoney-content,.content{
+        width: 90%;
+        left:5%;
+    }
+
+}

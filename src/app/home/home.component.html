@@ -1,0 +1,75 @@
+<section class="mid-section">
+  <div class="userType mt-3" *ngIf="isLoginSuccessful">
+
+    <p>Welcome {{userType==='admin'?'Admin':specificCustomer.name}} </p>
+
+    <button class="btn btn-warning" (click)="closeUserTypeLogin()">Log out</button>
+  </div>
+  <div class="mid-block" *ngIf="!isLoginSuccessful">
+    <h2>Welcome to Your's Bank</h2>
+    <div class="d-flex justify-content-around mt-4 mid-btn">
+      <div>
+        <button class="btn btn-primary" (click)="clickAdminLogin()">Admin Login</button>
+      </div>
+      <div>
+        <button class="btn btn-secondary" (click)="clickCustomerLogin()">Customer Login</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- admin login page  -->
+  <div class="adminLogin" *ngIf="showAdminLogin">
+
+    <div class="content">
+      <div class="d-flex justify-content-between">
+        <h3>Your's Bank Admin Login </h3>
+        <button type="button" (click)="closeSignAdmin()" class="btn-close m-2" aria-label="Close"></button>
+      </div>
+
+      <form (ngSubmit)="adminLogin()">
+        <div class="mb-3">
+          <label for="emailId" class="form-label">Email address</label>
+          <input type="email" class="form-control" [(ngModel)]="emailId" name="emailId" id="emailId"
+            placeholder="admin email address">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="password" id="password"
+            placeholder="admin password">
+        </div>
+        <button type="submit" class="btn btn-success w-100">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+
+<!-- customer login -->
+<div class="adminLogin" *ngIf="showCustomerLogin">
+  <div class="content">
+    <div class="d-flex justify-content-between">
+      <h3>Your's Bank Customer Login </h3>
+      <button type="button" (click)="closeSignCustomer()" class="btn-close m-2" aria-label="Close"></button>
+    </div>
+
+    <form (ngSubmit)="customerLogin()">
+      <div class="mb-3">
+        <label for="emailId" class="form-label">Email address</label>
+        <input type="email" class="form-control" [(ngModel)]="cusEmail" name="emailId" id="emailId"
+          placeholder="customer email address">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="cusPassword" id="password"
+          placeholder="customer password">
+      </div>
+      <button type="submit" class="btn btn-success w-100">
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+<!-- <router-outlet></router-outlet> -->
+
+</section>
+

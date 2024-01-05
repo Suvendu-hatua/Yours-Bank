@@ -1,0 +1,228 @@
+<section>
+    <div *ngIf="isSuccessfulLogin && userType==='admin' && (isAddMoney===false && isTransferMoney===false)">
+        <h2 class="heading">Showing All The Customers</h2>
+        <div *ngFor="let customer of CustomerList">
+            <div class="card card-all mb-3 border-info">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAPoA+gMBIgACEQEDEQH/xAAaAAEAAgMBAAAAAAAAAAAAAAAABQYBAwQC/9oACAEBAAAAALKAAAAAAA18ejw3dfSAAANcNE8IG+VmusAAMQMDrADMrY+gABzVPkAAPdnlgAcdP1AZMAZsU8AOWm6wOua6dETHAYs02A8UzkAmrNkQVbAzce8CuwIHTdsgqcWB03bIaKPgCxTwEZUgFlmwrsAAtUuBx0oB03gKNoAWKeAi6mGBcu85KSAdd1yCpRYBYbARFVAE1ZsiCrYAlLaQFdGQOya6dERHAB13UrkCB2z+5GQBI2Foho0DfeiuwAy6Lr7PFG1Ln3CtQgN95IKtjKyzYQVcl7SGuhsDuuZGVEZXLuDFVs20FC8YExaTVRAXLuAAULwFmmhT44yuXcAAoXjBm87xEVYLl3AAKF4EnbQxSeYXLuAAULwYufcCNqA7ZLfu2+/Z58atOjijBMWkBWoQAAA6LpsAYqUYAABtuXUAPNWiQAA6Ld1gAQVe84AAlbPtAAOeAh8YAO+fkwAANUVG8ejy3dffK9gAAADGQAAAAAAAf//EABgBAQEBAQEAAAAAAAAAAAAAAAADAgEE/9oACgICEAMQAAAAAA7wOdAAAN4pjvAM6lTnQALS1kAAlTGwC0tZDG577ys+8CVMbDeKzDnYWDWbSAhbnS8e8DOo1DvLxAnudO8vEAhbnSk6YA52FtZtIDGxzrne81kDz31m0gjXOi8Z7xsrLeTiF+8vEIX4O850KYpMzqNS0dcIX4ACmKTJUxs1m0iVM6AO83jeedhYCs94AAAjXOgCk6YAA4lXOgAO8pjWe8OdxuewAAAAAA//xAA7EAACAgADAwkFBgYDAQAAAAABAgMEAAURIDBSEiIxMjNBUXFyEyE0QFQUFUJhkZIQI0NQU2Nic6GB/9oACAEBAAE/AP7Y80MXaSonmcPmtBP62vkuDndTglOPvyD/AASYGeVu+KXC5xRPSzr5riO5Vl6k8Z+XlmihXlSyBB+eJ88Qe6CLX83xNmNybrTEDwX3biKzYg7KZ1xBncw0E0YfFe9Ws9nJzuE+4/JMyqpZmAUdJPQMWs6/BV/ecSSSSuXkcs3id7VzaxBosn81MV7UFlOVE/mO8b+1bhqJy5D6V7zi3enttzzoo6EHyEckkTh43KsOgjFDNEsaRy6JL/429u3Y6cfFIeomJppJ5GkkYsx+Ty3M+VpBYPofd3LSVITI3ki+JxNNJPI0kjas24rUbNr3xronG2IsjgHayu+Pumh/iP7jiTJap6jumLOV2a4LddPFdzlWYGUCCY8/8B3LusaM7nRVGpOLlp7cxkPko8BuMsy0T6Tz9n+FeLAAAAA0GzmWWBgZ4F0bpdNwCQQQSCDqDjL7gtw6ntF9z7jOberCqnm+4p1jasJF3dL+QwAFAAGgA0A281qiCxy0GiSbinZapOso8nHiMKwZQynUEAg7VmcV4JJT+EYZmdmZjqxJJO4yKPmWJfzCbjN4g9Jm4GB3OS2eXE0B6U967Wdz86KAettzkvwZ/wC1txmPwNn0bmpP9msxS9wPO8jtWZvb2JZeJtzkUnMni/MPuM3lCUmXjYDdZbN7alEe9eYdi9J7KnO//DQebbqlZ+y2El7uhvI4UhgCDqCNQdvNbQnsclDqke6yKT4iLyfYzt9KiLxS7vLMyEGkE3Z9zcOAQQCCCDs5lmYAMEDet93lD8i8g40YbGfH4UeveVb9mr7kbVOA4izuA9rE64+9qH+U/sOHzqqvUR3xazSzZBTUInCu8oNyb1U/7BsZ72sHoO4p0ZrhPI5qDpc4jyemnWDSY+66H04x910PpxjNKEMMCywR6aHR9jLagtWOeNY0GrY+66H04x910PpxiTJqb9QOmLeV2KwL9oniNxV+Kr/9qbGejn1vS23VrtanSIebHwGI40iRY0XRVGgGxJGssbxuOawIOJonhleJ+sh0P8cvq/Zayqeu3OfZzagIv58S6ITzxt1BrbrD/amxnq6x138GYbeSQ6QSTd7ttZzU1UWU8n/hlFP203t3HMjP6vtTRrNFJG3QykY6NrLBrfrerXYzdOXRc8DqdvLPgK3p2iAwII1BGhGJsqmFsQxdR+h8QxJBEkSDRVG3L2snrO1kia23fgj2JoxNDLHxIRjQjp2ss+Arenfy9rJ622sji0ryycb7OaQ+xuy8L88bWWfAVvTv5e1k9bbPvPuA1J6MVoRBBFFwKBs5zX9pXEo6YtrLPgK3p38vayettnKYPbWw5HNi520QGBBGoIIIxbrGrO8R81PiNnLPgK3p38h1kf1HZy6r9lrKp67c59vM6f2mDlIP5sezWv2ao5MbApwnCZ6/464wueQd8MmBnNI8Y81wM0oH+v8AqpwMxo/UpgXqX1MWPttP6qL92PttP6mL9cG/S+pTBzOh9QP0ODnFHic+S4bPK3dFKcPnvBW/VsTZtcmUpqqA8OzlFMzS+3ccyM/q25zajyGNiIcw9cfLVKsluYRp5s3gMRRJDGkaDRVGg3LAMCpAII0IOMwoGo/LTUwn5SGGSxIsUY1Y4qVI6kQRPNm8Tu3RXUqygqRoQcX8setrJFq0P/q/JVqs1qTkRDzPcMVKcVSPkp0nrN3nfXcoD6yVtAeDDo8bFHUqw6Qd/Tyqaxo8msceIYYoECRoFUfIWKsFldJUB8D3jFnJp4/fAfajDKysVZSGHcRod3Xy61Y6E5CcT4q5XXraMee/EflJYIZxpLGrD8xiXJIG7KRkxJk9xOryHw9O2nWryfprgqy9KkeYIxqPHA9/Rha9h+rBIfJThMrvP/SC+o4iyPvmn/8AiYgoVK/vSIa8R95+b0HgP7j/AP/EACIRAAIBAwQDAQEAAAAAAAAAAAECEQAQIBIxQVEhMDIDQP/aAAgBAgEBPwDKDWluq0t17AhNBQMSgNFSPQqgelk5GSrGDPG1aj3QcigQcHWPOCCTODGBgpg4kQYuogDB9sBuMXGxsPJGREG6Lzi3ybJ9DAkCtYrUD4itArSq+a1jqg4OB2Nl+hg5k3UyKc8XQyLnY2HgjA7m4JGH583f5upkXO5z/Pm7ni6mDcoZrS3VQeqg1BqD1WluqRSLEwMUbg+tmnJX79BIFM0+gMRQcVI7uWUc0X6omf5f/8QAIBEBAAEEAwEBAQEAAAAAAAAAAQIAEBEgEjFRMEEhQP/aAAgBAwEBPwDbJXI9rke/RmFMl1JtCPwlLPxjL3aUs6Rh7WDymI0mNIyzpN0iZdJGTUcl1y6Q70enWDZ6dhzecvzWPdpdOgZrg1xT+5rm1llXB9pimh2Wl06RMF0w1AvMw3Oyz1oXQdJ/l4d3kYbm8/y8C8jJckVyPaye1krJWT2uR7UkbBl1lH9PnExtKHnwBaI4+CDTCsPlsNEWiHv+b//Z"
+                            class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{customer.gender==="male"?"Mr. ":"Miss. "}}{{customer.name}}</h5>
+                            <div class="card-text">
+                                <p><strong>Account NO:</strong> {{customer.id}}</p>
+                                <p><strong>Email Id:</strong> {{customer.email}}</p>
+                                <p><strong>Amount: </strong>{{customer.amount|currency:'INR'}}</p>
+                            </div>
+
+                            <button class="btn btn-success mt-2" (click)="handleClick1(customer.id)">Add Money</button>
+                            <button class="btn btn-warning mt-2" (click)="handleClick2(customer.id)">Transfer
+                                Money</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- transfer money -->
+    <div class="money-transaction" *ngIf="isTransferMoney">
+        <div class="transferMoney-content">
+            <h4>Transfer Money from Your Account</h4>
+            <p>Your Name: {{senderName}}</p>
+            <p>Your Account No: {{senderAcno}}</p>
+
+            <form [formGroup]="formobj2" (ngSubmit)="transferMoney()">
+                <div>
+                    <label for="accountno" class="form-label">Enter Receiver Account No</label>
+                    <input type="text" formControlName="accountno" class="form-control" id="accountno"
+                        placeholder="enter receiver A/C no">
+                    <div *ngIf="f2['accountno'].touched && f2['accountno'].invalid" class="myalerts">
+                        <div *ngIf="f2['accountno'].errors && f2['accountno'].errors['required']">Account No is
+                            required.</div>
+                        <div *ngIf="f2['accountno'].errors && f2['accountno'].errors['pattern']">Account No contains
+                            digits only.</div>
+                    </div>
+                    <label for="amount" class="form-label">Enter the Amount</label>
+                    <input type="text" formControlName="transferAmount" class="form-control" id="amount"
+                        placeholder="Enter amount">
+                    <div *ngIf="f2['transferAmount'].touched && f2['transferAmount'].invalid" class="myalerts">
+                        <div *ngIf="f2['transferAmount'].errors && f2['transferAmount'].errors['required'] ">Amount is
+                            required.</div>
+                        <div *ngIf="f2['transferAmount'].errors && f2['transferAmount'].errors['amountValidation']">Amount must
+                            be of digits.</div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-success m-3" [disabled]="!formobj2.valid">Transfer Money</button>
+                        <button class="btn btn-secondary m-3" (click)="closeTransferMoney()">Close</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- addmoney part -->
+    <div class="money-transaction" *ngIf="isAddMoney">
+        <div class="content">
+            <h4>Add Money to Your Account</h4>
+            <p>Your Name: {{senderName}}</p>
+            <p>Your Account No: {{senderAcno}}</p>
+            <div>
+
+                <form [formGroup]="formobj1" (ngSubmit)="addMoney()">
+                    <label for="amount" class="form-label">Enter the Amount</label>
+                    <input type="text" formControlName="amount" class="form-control" id="amount"
+                        placeholder="enter amount">
+                    <div *ngIf="f['amount'].touched && f['amount'].invalid" class="myalerts">
+                        <div *ngIf="f['amount'].errors && f['amount'].errors['required'] ">Amount is required.</div>
+                        <div *ngIf="f['amount'].errors && f['amount'].errors['amountValidation']">Amount must be of digits.</div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-success m-3" type="submit" [disabled]="formobj1.invalid">Add
+                            Money</button>
+                        <button class="btn btn-secondary m-3" (click)="closeAddMoney()">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Displaying Specific Customer Details  -->
+
+<section *ngIf="isSuccessfulLogin && userType==='customer'" class="mid-section">
+
+    <div class="card card-sp border-info">
+        <img class="card-image"
+            src="data:image/jpeg;base64,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"
+            class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title sp-heading">{{specificCustomer.gender==='male'?'Mr. ':'Miss. '}}{{specificCustomer.name}}</h5>
+            <p class="card-text sp-para"><strong>Email Id:</strong> {{specificCustomer.email}}</p>
+            <p class="card-text sp-para"><strong>Amount No:</strong> {{specificCustomer.id}}</p>
+            <p class="card-text sp-para"><strong>Amount:</strong> {{specificCustomer.amount|currency:'INR'}}</p>
+            <p class="card-text sp-para"><strong>Mobile No:</strong>{{specificCustomer.phoneno}}</p>
+            <p class="card-text sp-para"><strong>Address:</strong> {{specificCustomer.address}}</p>
+            <div class="d-flex justify-content-around mt-3">
+                <button class="btn btn-success" (click)="handleClick1(specificCustomer.id)">Add Money</button>
+                <button class="btn btn-warning" (click)="handleClick2(specificCustomer.id)">Transfer Money</button>
+                <button class="btn btn-primary" (click)="handleClick3(specificCustomer.id)">Change Password</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- transfer money -->
+    <div class="money-transaction" *ngIf="isTransferMoney">
+        <div class="transferMoney-content">
+            <h4>Transfer Money from Your Account</h4>
+            <p>Your Name: {{senderName}}</p>
+            <p>Your Account No: {{senderAcno}}</p>
+
+            <form [formGroup]="formobj2" (ngSubmit)="transferMoney()">
+                <div>
+                    <label for="accountno" class="form-label">Enter Receiver Account No</label>
+                    <input type="text" formControlName="accountno" class="form-control" id="accountno"
+                        placeholder="enter receiver A/C no">
+                    <div *ngIf="f2['accountno'].touched && f2['accountno'].invalid" class="myalerts">
+                        <div *ngIf="f2['accountno'].errors && f2['accountno'].errors['required']">Account No is
+                            required.</div>
+                        <div *ngIf="f2['accountno'].errors && f2['accountno'].errors['pattern']">Account No contains
+                            digits only.</div>
+                    </div>
+                    <label for="amount" class="form-label">Enter the Amount</label>
+                    <input type="text" formControlName="transferAmount" class="form-control" id="amount"
+                        placeholder="Enter amount">
+                    <div *ngIf="f2['transferAmount'].touched && f2['transferAmount'].invalid" class="myalerts">
+                        <div *ngIf="f2['transferAmount'].errors && f2['transferAmount'].errors['required'] ">Amount is
+                            required.</div>
+                        <div *ngIf="f2['transferAmount'].errors && f2['transferAmount'].errors['amountValidation']">Amount must
+                            be of digits.</div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-success m-3" [disabled]="!formobj2.valid">Transfer Money</button>
+                        <button class="btn btn-secondary m-3" (click)="closeTransferMoney()">Close</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- change password -->
+    <div class="money-transaction" *ngIf="isChangePassword">
+        <div class="content password-content">
+            <h4>Change Password!</h4>
+            <div>
+
+                <form [formGroup]="formobj" (ngSubmit)="changePassword()">
+                    <label for="password1" class="form-label">Enter Your Previous Password</label>
+                    <input type="password" formControlName="previousPassword" class="form-control" id="password1"
+                        placeholder="enter previous password">
+                    <div *ngIf="f3['previousPassword'].touched && f3['previousPassword'].invalid" class="myalerts">
+                        <div *ngIf="f3['previousPassword'].errors && f3['previousPassword'].errors['required']">Previous password is required</div>
+                    </div>
+                    <label for="password2" class="form-label">Enter New Password</label>
+                    <input type="password" formControlName="currentPassword" class="form-control" id="password2"
+                        placeholder="enter new password">
+                    <div *ngIf="f3['currentPassword'].touched && f3['currentPassword'].invalid" class="myalerts">
+                        <div *ngIf="f3['currentPassword'].errors && f3['currentPassword'].errors['required']">Current password is required</div>
+                        <div *ngIf="f3['currentPassword'].errors && f3['currentPassword'].errors['passwordValidation']">Password must be of atleast 8 characters,should contain atleast 1 uppercase,1 lowercase,1 special character.</div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-success m-3" type="submit" [disabled]="formobj.invalid">Change Password</button>
+                        <button class="btn btn-secondary m-3" (click)="closeChangePassword()">Close</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- addmoney part -->
+    <div class="money-transaction" *ngIf="isAddMoney">
+        <div class="content">
+            <h4>Add Money to Your Account</h4>
+            <p>Your Name: {{senderName}}</p>
+            <p>Your Account No: {{senderAcno}}</p>
+            <div>
+
+                <form [formGroup]="formobj1" (ngSubmit)="addMoney()">
+                    <label for="amount" class="form-label">Enter the Amount</label>
+                    <input type="text" formControlName="amount" class="form-control" id="amount"
+                        placeholder="enter amount">
+                    <div *ngIf="f['amount'].touched && f['amount'].invalid" class="myalerts">
+                        <div *ngIf="f['amount'].errors && f['amount'].errors['required'] ">Amount is required.</div>
+                        <div *ngIf="f['amount'].errors && f['amount'].errors['amountValidation']">Amount must be of digits.</div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-success m-3" type="submit" [disabled]="formobj1.invalid">Add
+                            Money</button>
+                        <button class="btn btn-secondary m-3" (click)="closeAddMoney()">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- for unsuccessful login page  -->
+<section>
+    <div class="unsuccessfullLogin" *ngIf="!isSuccessfulLogin">
+        <h3>You are not Signed In!!</h3>
+        <p>Please go the Home Section and Sign In.</p>
+    </div>
+</section>

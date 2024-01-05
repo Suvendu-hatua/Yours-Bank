@@ -1,0 +1,26 @@
+.card-text{
+    margin-bottom:0;
+}
+
+.card{
+    width: 700px;
+    margin: auto;
+}
+.transaction h2{
+    margin-top: 80px;
+    background-color: aquamarine;
+    text-align: center;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.context{
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 576px){
+    .card{
+        width: 90%;
+        
+    }
+}

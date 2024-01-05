@@ -1,0 +1,37 @@
+.customer-form{
+    width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+h2{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    background-color:beige;
+    margin-top: 60px;
+    padding: 10px;
+}
+input,textarea,select{
+    background-color: aliceblue;
+}
+.customer{
+    /* background-color: aliceblue; */
+    padding-top: 20px;
+}
+label{
+    font-weight: bold;
+}
+.myalerts{
+    color: red;
+}
+
+@media only screen and (max-width: 576px){
+    h2{
+        font-size: 1.5rem;
+    }
+    .customer-form{
+        width: 100%;
+        padding: 10px;
+    }
+}

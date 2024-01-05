@@ -1,0 +1,105 @@
+
+ <!-- for adding new customer by admin  -->
+ <!-- -->
+ <div class="customer" *ngIf="isLoginSuccessful && userType==='admin'" >
+    <h2>Add a New Customer</h2>
+    <div class="customer-form">
+      <form [formGroup]="formobj" (ngSubmit)="submitForm()">
+          <div class="mb-3">
+              <label  for="name" class="form-label">
+                Customer Name: 
+          </label>
+              <input type="text" class="form-control"   formControlName="name" id="name" placeholder="customer name">
+              <div *ngIf="f['name'].touched && f['name'].invalid " class="myalerts" >
+                  <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required</div>
+                  <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name must be minimum of 4 characters</div>
+                  <div *ngIf="f['name'].errors && f['name'].errors['nameValidation']">
+                    Name must be [a-zA-Z\s] format.
+                  </div>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label  for="email">
+                Customer Email: 
+              </label>
+              <input type="email" class="form-control" formControlName="email" id="email" placeholder="customer email">
+              <div *ngIf="f['email'].touched && f['email'].invalid" class="myalerts">
+
+                <div *ngIf="f['email'].errors && f['email'].errors['required']">Email address is required</div>
+                <div *ngIf="f['email'].errors && f['email'].errors['email']">Please,enter a valid email address.</div>
+              </div>
+          </div>
+          
+          <div class="mb-3">
+              <label  for="phoneno">
+                Phone No: 
+              </label>
+              <input type="text" class="form-control" formControlName="phoneno" id="phoneno" placeholder="customer phone no">
+              <div *ngIf="f['phoneno'].touched && f['phoneno'].invalid" class="myalerts">
+                <div *ngIf="f['phoneno'].errors && f['phoneno'].errors['minlength']">Phone number must be of 10 digits.</div>
+                <div *ngIf="f['phoneno'].errors && f['phoneno'].errors['maxlength']">Phone number must be of 10 digits.</div>
+                <div *ngIf="f['phoneno'].errors && f['phoneno'].errors['required']">Phone number is required.</div>
+                <div *ngIf="f['phoneno'].errors && f['phoneno'].errors['pattern']">
+                  Phone number only contains digits.
+                </div>
+              </div>
+          </div>
+          <div class="mb-3">
+            <label  for="address">
+              Address: 
+            </label>
+            <textarea formControlName="address" class="form-control" id="address" cols="30" rows="5" placeholder="customer address"></textarea>
+            <div *ngIf="f['address'].touched && f['address'].invalid" class="myalerts">
+              <div *ngIf="f['address'].errors && f['address'].errors['required']">Address is required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+          <label  >
+            Country: 
+          </label>
+          <select formControlName="country" class="form-select" id="country">
+            <option selected>select Country</option>
+            <option value="india">India</option>
+            <option value="pakistan">Pakistan</option>
+            <option value="bangladesh">Bangladesh</option>
+          </select>
+          
+          <div 
+          *ngIf="f['country'].touched && f['country'].invalid" class="myalerts">
+            <div *ngIf="f['country'].errors && f['country'].errors['required']">Country is required</div>
+        </div>
+
+      </div>
+      <div class="mb-3">
+        <label  for="gender">
+          Gender:
+        </label>
+        <input type="radio" formControlName="gender" id="gender" value="male">Male
+        <input type="radio" formControlName="gender" id="gender" value="female">Female
+        <div 
+          *ngIf="f['gender'].touched && f['gender'].invalid" class="myalerts">
+            <div *ngIf="f['gender'].errors && f['gender'].errors['required']">Gender is required</div>
+        </div>
+    </div>
+          <button class="btn btn-primary w-100" [disabled]="!formobj.valid">Add Customer</button>
+      </form>
+  </div>
+  
+ </div>
+
+ <!-- //page for unsuccessful login -->
+
+ <div class="unsuccessfullLogin" *ngIf="!isLoginSuccessful">
+      <h3>You are not Signed In!!</h3>
+      <p>Please go the Home Section and Sign In.</p>
+ </div>
+
+
+ <!-- page for Customer -->
+ <div class="unsuccessfullLogin"*ngIf="isLoginSuccessful && userType==='customer'">
+      <h3>Access denied!!</h3>
+      <p>A Customer cann't add a New Customer</p>
+ </div>
+
+
+ 

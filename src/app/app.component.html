@@ -1,0 +1,50 @@
+<!-- <app-home></app-home> -->
+
+<section>
+    <nav class="navbar fixed-top navbar-expand-lg" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" routerLink="home">
+                <img src="https://clipground.com/images/logo-bank-mandiri-clipart-7.png" alt="" width="30" height="24" class="d-inline-block align-text-top m-1">
+                <strong>Your's Bank</strong>
+              </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="registration">Add Customers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="customer">Customers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="transactions">Transaction History</a>
+              </li>
+            </ul>
+            <!-- <div >
+              <img src="https://www.logolynx.com/images/logolynx/23/23938578fb8d88c02bc59906d12230f3.png" alt="" width="35" height="35" >
+              {{isLoginSuccessful?"Admin":"Customer"}}
+            
+            </div>   -->
+          </div>
+        </div>
+      </nav>
+</section>
+
+<!-- <ul>
+  <home []=""></home>
+    <li>
+       <a routerLink="registration">Registration</a>
+    </li>
+    <li>
+        <a [routerLink]="['/customer']">Customer</a>
+    </li>
+    <li>
+        <a [routerLink]="['transactions']">Transactions</a>
+    </li>
+</ul>-->
+<router-outlet></router-outlet> 

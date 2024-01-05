@@ -1,0 +1,108 @@
+<div class="transaction" *ngIf="isSuccessfulLogin && userType==='admin'">
+    <h2>Transaction History</h2>
+    <div class="context">
+        <div *ngFor="let transaction of TransactionLists">
+            <span *ngIf="transaction.type==='credit' then temp1 else temp2"></span>
+            <ng-template #temp1>
+                <div class="card mb-3 border-info">
+                    <h5 class="card-header text-bg-info">Add Money to {{transaction.senderName}}'s Account</h5>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-warning">Time: {{transaction.time}}</h6>
+                        <div>
+                            <p class="card-text"><Strong>Account Number: </Strong>{{transaction.senderAcno}} </p>
+                            <p class="card-text text-success"><Strong>Amount: </Strong>{{transaction.amount|currency:'INR'}}</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #temp2>
+                <div class="card mb-3 border-info">
+                    <h5 class="card-header text-bg-info ">Money Transfer From {{transaction.senderName}}'s Account To
+                        {{transaction.receiverName}}'s Account</h5>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-warning">Time: {{transaction.time}}</h6>
+                        <div>
+                            <p class="card-text"><Strong> Sender Account Number: </Strong>{{transaction.senderAcno}}
+                            </p>
+                            <p class="card-text"><strong>Receiver Account Number: </strong>{{transaction.receiverAcno}}
+                            </p>
+                            <p class="card-text text-danger"><Strong>Amount: </Strong>{{transaction.amount|currency:'INR'}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </ng-template>
+
+        </div>
+    </div>
+</div>
+<!-- l **************************************************** -->
+<div class="transaction" *ngIf="isSuccessfulLogin && userType==='customer'">
+    <h2>Transaction History</h2>
+    <div class="context">
+        <div *ngFor="let transaction of specificTransactionLst">
+            
+            <span *ngIf="transaction.type==='credit'">
+                <div class="card mb-3 border-success">
+                    <h5 class="card-header text-bg-success">{{transaction.amount|currency:'INR'}} Add Money to Your Account</h5>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2  text-warning">Time: {{transaction.time}}</h6>
+                        <div>
+                            <p class="card-text"><Strong>Sender Account Number: </Strong>{{transaction.senderAcno}} </p>
+                            <p class="card-text"><Strong>Sender Name: </Strong>{{transaction.senderName}} </p>
+                            <p class="card-text text-success"><Strong>Amount: </Strong>{{transaction.amount|currency:'INR'}} Rs.</p>
+                        </div>
+                    </div>
+                </div>
+            </span>
+
+            <span *ngIf="transaction.type==='debit' && transaction.senderAcno===specificCustomerAccno ">
+                <div class="card mb-3 border-danger">
+                    <h5 class="card-header text-bg-danger ">Money Transfer To
+                        {{transaction.receiverName}}'s Account</h5>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2  text-warning">Time: {{transaction.time}}</h6>
+                        <div>
+                            <p class="card-text"><strong>Receiver Account Number: </strong>{{transaction.receiverAcno}}
+                            </p>
+                            <p class="card-text"><strong>Receiver Name: </strong>{{transaction.receiverName}}
+                            </p>
+                            <p class="card-text text-danger"><Strong>Amount: </Strong>{{transaction.amount|currency:'INR'}}</p>
+                        </div>
+                    </div>
+                </div>
+            </span>
+            
+              <span *ngIf="transaction.type==='debit' && transaction.receiverAcno===specificCustomerAccno">
+                <div class="card mb-3 border-success">
+                    <h5 class="card-header text-bg-success">{{transaction.amount|currency:'INR'}} Add Money to Your Account</h5>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-warning">Time: {{transaction.time}}</h6>
+                        <div>
+                            <p class="card-text"><Strong>Sender Account Number: </Strong>{{transaction.senderAcno}} </p>
+                            <p class="card-text"><Strong>Sender Name: </Strong>{{transaction.senderName}} </p>
+                            <p class="card-text text-success"><Strong>Amount: </Strong>{{transaction.amount|currency:'INR'}}</p>
+                        </div>
+                    </div>
+                </div>
+              </span>
+            
+            
+                
+
+            
+
+        </div>
+    </div>
+</div>
+
+<!-- for unsuccessful login page  -->
+<section>
+    <div class="unsuccessfullLogin" *ngIf="!isSuccessfulLogin">
+        <h3>You are not Signed In!!</h3>
+        <p>Please go the Home Section and Sign In.</p>
+    </div>
+</section>
+
+
+
